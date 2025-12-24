@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Bus Tracking | Safar Punjab</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #map {
+      height: calc(100vh - 70px);
+    }
+
+    .info-panel {
+      position: absolute;
+      top: 90px;
+      right: 20px;
+      background: #fff;
+      padding: 16px;
+      width: 260px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+
+    .info-panel h3 {
+      margin-bottom: 10px;
+      color: #0b4da2;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .green { background: #d4f8d4; }
+    .yellow { background: #fff3cd; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+  <svg width="42" height="42" viewBox="0 0 100 100" class="logo-icon">
+    <circle cx="50" cy="50" r="46" fill="#0b4da2"/>
+    <path d="M20 60 Q50 20 80 60" stroke="#ffffff" stroke-width="5" fill="none"/>
+    <rect x="32" y="48" width="36" height="20" rx="4" fill="#ff9933"/>
+    <circle cx="38" cy="72" r="4" fill="#ffffff"/>
+    <circle cx="62" cy="72" r="4" fill="#ffffff"/>
+  </svg>
+
+  <div class="logo-text">
+    <h1>Safar <span>Punjab</span></h1>
+    <p>Smart Bus Navigation</p>
+  </div>
+</div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Info Panel -->
+  <div class="info-panel">
+    <h3>Bus DL-402</h3>
+    <p><b>Route:</b> Jalandhar → Ludhiana</p>
+    <p><b>ETA:</b> 6–8 minutes</p>
+    <p><b>Trust Score:</b> 82%</p>
+    <span class="badge green">Moderate Crowd</span>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Map Logic -->
+  <script src="js/map.js"></script>
+
+</body>
+</html>
