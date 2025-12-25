@@ -4,91 +4,32 @@
   <meta charset="UTF-8" />
   <title>Conductor Login | Safar Punjab</title>
   <link rel="stylesheet" href="css/style.css" />
-
-  <style>
-    .login-box {
-      max-width: 400px;
-      margin: 80px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .login-box h2 {
-      color: #0b4da2;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .login-box label {
-      display: block;
-      margin-top: 15px;
-      font-weight: 500;
-    }
-
-    .login-box input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .login-box button {
-      width: 100%;
-      margin-top: 20px;
-      padding: 12px;
-      background: #0b4da2;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-      border-radius: 5px;
-    }
-
-    .error {
-      color: red;
-      margin-top: 10px;
-      text-align: center;
-    }
-  </style>
 </head>
 
-<body>
+<body class="conductor-page">
 
+  <!-- Header -->
   <header class="header">
     <div class="logo">
-  <svg width="42" height="42" viewBox="0 0 100 100" class="logo-icon">
-    <circle cx="50" cy="50" r="46" fill="#0b4da2"/>
-    <path d="M20 60 Q50 20 80 60" stroke="#ffffff" stroke-width="5" fill="none"/>
-    <rect x="32" y="48" width="36" height="20" rx="4" fill="#ff9933"/>
-    <circle cx="38" cy="72" r="4" fill="#ffffff"/>
-    <circle cx="62" cy="72" r="4" fill="#ffffff"/>
-  </svg>
-
-  <div class="logo-text">
-    <h1>Safar <span>Punjab</span></h1>
-    <p>Smart Bus Navigation</p>
-  </div>
-</div>
-
+      <img src="images/logo1.jpeg" alt="Safar Punjab">
+      <h1>Safar <span>Punjab</span></h1>
+    </div>
   </header>
 
-  <div class="login-box">
-    <h2>Conductor Login</h2>
+  <!-- Centered Login -->
+  <div class="login-wrapper">
+    <div class="login-box">
+      <h2>Conductor Login</h2>
 
-    <label>Conductor ID</label>
-    <input type="text" id="conductorId" placeholder="e.g. PRTC1024">
+      <label>Conductor ID</label>
+      <input type="text" placeholder="e.g. PRTC1024">
 
-    <label>Password</label>
-    <input type="password" id="password" placeholder="••••••">
+      <label>Password</label>
+      <input type="password" placeholder="••••••">
 
-    <button onclick="login()">Login</button>
-
-    <div class="error" id="errorMsg"></div>
+      <button>Login</button>
+    </div>
   </div>
 
-  <script src="js/conductor-login.js"></script>
 </body>
 </html>
