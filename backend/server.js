@@ -1,5 +1,3 @@
-const cors = require("cors");
-app.use(cors());
 const express = require("express");
 const cors = require("cors");
 
@@ -18,7 +16,7 @@ const reportRoutes = require("./routes/reportRoutes");
 // Use routes
 app.use("/api/buses", busRoutes);
 app.use("/api/conductor", conductorRoutes);
-app.use("/api/reports", reportRoutes);
+app.use("/api/report", reportRoutes); // ✅ SINGULAR (IMPORTANT)
 
 // Test route
 app.get("/", (req, res) => {
@@ -29,3 +27,4 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+

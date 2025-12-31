@@ -11,12 +11,13 @@ router.post("/", (req, res) => {
     });
   }
 
+  // Dummy success response (no DB needed)
   res.json({
     success: true,
-    message: "Report submitted successfully",
-    data: { busNumber, issue }
+    message: "Report submitted successfully"
   });
 });
 
 module.exports = router;
+
 

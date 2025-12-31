@@ -85,31 +85,27 @@
   </header>
 
   <!-- Report Form -->
+<div class="report-wrapper">
   <div class="report-box">
-    <h2>Report Incorrect Bus Information</h2>
-    <p>Please report only if information is incorrect.</p>
+    <h2>Report an Issue</h2>
 
     <label>Bus Number</label>
-    <input type="text" id="busNumber" placeholder="e.g. DL-402" />
+    <input type="text" id="busNumber" placeholder="PB10A1234" />
 
-    <label>Issue Type</label>
-    <select id="issueType">
-      <option>Bus not arrived</option>
-      <option>Wrong live location</option>
-      <option>Incorrect ETA</option>
-      <option>Wrong crowd level</option>
-      <option>Bus cancelled</option>
-    </select>
-
-    <label>Additional Details (optional)</label>
-    <textarea id="details" rows="4"
-      placeholder="Explain the issue briefly"></textarea>
+    <label>Issue</label>
+    <textarea id="issue" placeholder="Describe the issue"></textarea>
 
     <button onclick="submitReport()">Submit Report</button>
 
-    <div id="successMsg" class="success"></div>
+    <p id="report-message"></p>
   </div>
+</div>
+
+
+
 
   <script src="js/report.js"></script>
+  <script src="js/api.js"></script>
+
 </body>
 </html>

@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+cl<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Safar Punjab</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+<script src="js/api.js"></script>
+<script>
+  getBuses();
+</script>
+
 
 <body>
 
@@ -23,8 +28,15 @@
   </nav>
 </header>
 
+
+
 <!-- HERO SECTION -->
 <section class="hero">
+  <section class="bus-section">
+  <h2>Live Bus Status</h2>
+  <div id="bus-list"></div>
+</section>
+
 
   <!-- Animated Bus -->
  <img src="images/bus.png" class="bus-animate" alt="">
