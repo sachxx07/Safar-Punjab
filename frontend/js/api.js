@@ -1,43 +1,65 @@
 // ===============================
-// BASE URL (Backend)
+// BASE URL
 // ===============================
 const BASE_URL = "http://localhost:5000";
 
-
 // ===============================
-// 1️⃣ FETCH & SHOW BUSES (Homepage)
+// HERO BUTTON LOGIC
 // ===============================
-async function getBuses() {
-  try {
-    const response = await fetch(`${BASE_URL}/api/buses`);
-    const buses = await response.json();
+let selectedType = "government";
 
-    const busList = document.getElementById("bus-list");
-    if (!busList) return; // safety check
+function selectType(type) {
+  selectedType = type;
 
-    busList.innerHTML = "";
+  document.getElementById("govBtn").classList.remove("active");
+  document.getElementById("priBtn").classList.remove("active");
 
-    buses.forEach(bus => {
-      const busCard = document.createElement("div");
-      busCard.className = "bus-card";
-
-      busCard.innerHTML = `
-        <h3>Bus Number: ${bus.number}</h3>
-        <p><strong>Route:</strong> ${bus.route}</p>
-        <p><strong>Status:</strong> ${bus.status}</p>
-      `;
-
-      busList.appendChild(busCard);
-    });
-
-  } catch (error) {
-    console.error("Error fetching buses:", error);
+  if (type === "government") {
+    document.getElementById("govBtn").classList.add("active");
+  } else {
+    document.getElementById("priBtn").classList.add("active");
   }
+
+  alert("Selected: " + type.toUpperCase() + " buses");
 }
 
+// ===============================
+// FIND BUS
+// ===============================
+function findBus() {
+  const query = document.getElementById("searchInput").value;
+
+  if (!query) {
+    alert("Please enter Bus Number / Route / Stop");
+    return;
+  }
+
+  alert(
+    `Searching for "${query}" in ${selectedType.toUpperCase()} buses`
+  );
+}
 
 // ===============================
-// 2️⃣ CONDUCTOR LOGIN
+// FEATURE BUTTONS
+// ===============================
+function goToSchedule() {
+  alert("Bus Schedule feature coming soon");
+}
+
+function goToLiveTracking() {
+  alert("Live Tracking feature coming soon");
+}
+
+function showETA() {
+  alert("Accurate ETA will be shown here");
+}
+
+function showUpdates() {
+  alert("Trusted updates will be shown here");
+}
+
+// ===============================
+// CONDUCTOR LOGIN (USED ON LOGIN PAGE)
 // ===============================
 async function loginConductor() {
   const id = document.getElementById("conductorId").value;
@@ -53,9 +75,7 @@ async function loginConductor() {
   try {
     const response = await fetch(`${BASE_URL}/api/conductor/login`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, password })
     });
 
@@ -64,8 +84,6 @@ async function loginConductor() {
     if (data.success) {
       message.style.color = "green";
       message.innerText = "Login successful!";
-      // Optional redirect
-      // window.location.href = "conductor.html";
     } else {
       message.style.color = "red";
       message.innerText = data.message || "Login failed";
@@ -74,14 +92,12 @@ async function loginConductor() {
   } catch (error) {
     message.style.color = "red";
     message.innerText = "Server error";
-    console.error(error);
   }
 }
-// ===============================
-// 3️⃣ REPORT ISSUE (Passenger)
-// ===============================
-const BASE_URL = "http://localhost:5000";
 
+// ===============================
+// REPORT ISSUE (USED ON REPORT PAGE)
+// ===============================
 async function submitReport() {
   const busNumber = document.getElementById("busNumber").value;
   const issue = document.getElementById("issue").value;
@@ -96,9 +112,7 @@ async function submitReport() {
   try {
     const response = await fetch(`${BASE_URL}/api/report`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ busNumber, issue })
     });
 
@@ -113,6 +127,7 @@ async function submitReport() {
       message.style.color = "red";
       message.innerText = data.message || "Error submitting report";
     }
+
   } catch (error) {
     message.style.color = "red";
     message.innerText = "Server error";
@@ -163,6 +178,9 @@ function showETA() {
 function showUpdates() {
   alert("Trusted updates will be shown here");
 }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> de9c548f64fa4e24dc77c243cfad9f9fcf7f3de1
