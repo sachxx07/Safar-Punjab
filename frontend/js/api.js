@@ -117,6 +117,52 @@ async function submitReport() {
     message.style.color = "red";
     message.innerText = "Server error";
   }
+
 }
+// ===============================
+// BUTTON FUNCTIONS (HOMEPAGE)
+// ===============================
+
+// 1️⃣ Government / Private toggle
+let selectedType = "government";
+
+function selectType(type) {
+  selectedType = type;
+  alert("Selected: " + type.toUpperCase() + " buses");
+}
+
+// 2️⃣ Find Bus button
+function findBus() {
+  const query = document.getElementById("searchInput").value;
+
+  if (!query) {
+    alert("Please enter bus number, route, or stop");
+    return;
+  }
+
+  alert(
+    `Searching for "${query}" in ${selectedType.toUpperCase()} buses`
+  );
+
+  // Later: filter bus list / call backend
+}
+
+// 3️⃣ Feature buttons
+function goToSchedule() {
+  alert("Bus Schedule feature coming soon");
+}
+
+function goToLiveTracking() {
+  alert("Live Tracking feature coming soon");
+}
+
+function showETA() {
+  alert("ETA will be shown here");
+}
+
+function showUpdates() {
+  alert("Trusted updates will be shown here");
+}
+
 
 
